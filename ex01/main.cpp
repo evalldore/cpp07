@@ -23,10 +23,6 @@ int main( void ) {
 	double piss[] = {1.0, 2.0, 3.0, 4.3, 5.0, 6.1, 7.9, 8.5, 9.1, 10.2};
 	iter(piss, 10, print_type);
 
-	std::cout << "Integer" << std::endl;
-	int cool[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-	iter(cool, 10, print_type);
-
 	std::cout << "Char" << std::endl;
 	char fast[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
 	iter(fast, 10, print_type);
