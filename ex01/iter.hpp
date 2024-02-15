@@ -2,7 +2,7 @@
 #include <cstddef>
 
 template<typename T>
-void check(T&);
+void print_type(T&);
 
 template<typename T>
 void iter(T[], size_t, void(*func)(T&));
