@@ -29,6 +29,7 @@ class Array {
 			if (this != &other) {
 				delete[] _data;
 				_size = other._size;
+				_data = new T[_size];
 				for (unsigned i = 0; i < _size; i++) {
 					_data[i] = other._data[i];
 				}
