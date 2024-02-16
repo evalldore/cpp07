@@ -44,8 +44,24 @@ static void exceptionsTest(void) {
 	std::cout << charArrays << std::endl;
 }
 
+static void copyTest(void) {
+	std::cout << "Copy test" << std::endl;
+	Array<int> intArrays(4);
+
+	intArrays[0] = 1;
+	intArrays[1] = 2;
+	intArrays[2] = 3;
+	intArrays[3] = 4;
+
+	Array<int> intCopy(10);
+	std::cout << "size: " << intCopy.size() << ' ' << intCopy << std::endl; 
+	intCopy = intArrays;
+	std::cout << "size: " << intCopy.size() << ' ' << intCopy << std::endl; 
+}
+
 int main(void) {
 	strTest();
 	intTest();
 	exceptionsTest();
+	copyTest();
 }

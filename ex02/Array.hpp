@@ -12,9 +12,11 @@ class Array {
 				}
 		};
 		Array(void): _size(0), _data(new T[0]) {}
-		Array(unsigned int n): _size(n), _data(new T[n]) {}
+		Array(unsigned int n): _size(n), _data(new T[n]()) {}
 		Array(const Array& other): _size(other._size), _data(new T[other._size]) {
-			*this = other;
+			for (unsigned i = other._size; i < other._size; i++) {
+				_data[i] = other._data[i];
+			}
 		}
 		~Array(void) {
 			delete[] _data;
@@ -24,8 +26,12 @@ class Array {
 		}
 
 		Array&	operator=(const Array& other) {
-			for (unsigned i = other._size; i < other._size; i++) {
-				_data[i] = other._data[i];
+			if (this != &other) {
+				delete[] _data;
+				_size = other._size;
+				for (unsigned i = 0; i < _size; i++) {
+					_data[i] = other._data[i];
+				}
 			}
 			return (*this);
 		}
