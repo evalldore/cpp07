@@ -44,6 +44,14 @@ static void exceptionsTest(void) {
 	std::cout << charArrays << std::endl;
 }
 
+static void opTest(void) {
+	std::cout << "operator test." << std::endl;
+	Array<int> intArrays(1);
+
+	intArrays[0] = 1;
+	std::cout << intArrays[0] << std::endl;
+}
+
 static void copyTest(void) {
 	std::cout << "Copy test" << std::endl;
 	Array<int> intArrays(4);
@@ -64,4 +72,5 @@ int main(void) {
 	intTest();
 	exceptionsTest();
 	copyTest();
+	opTest();
 }
